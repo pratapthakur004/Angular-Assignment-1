@@ -1,0 +1,16 @@
+<div class="card mb-3">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src={{proData.image}} class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h2 class="card-title">Name : {{proData.name}}</h2>
+          <p class="card-text">Description: {{proData.description}}</p>
+          <h4 class="card-text">Price : &#8377;  {{proData.price}}</h4>
+        </div>
+        <a [routerLink]="['/buyNow']"><button class="btn btn-success">BUY&nbsp;&nbsp;<i class="bi bi-bag"></i></button></a>
+        <a [routerLink]="['/addToCart']"><button class="btn btn-warning">Add to Cart&nbsp;&nbsp;<i class="bi bi-cart"></i></button></a>
+      </div>
+    </div>
+  </div>

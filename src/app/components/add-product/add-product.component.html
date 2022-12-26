@@ -1,0 +1,52 @@
+<div class="card mb-5" style="max-width: 600px;">
+    <h2>Add New Product Details</h2>
+    <div class="row g-0">
+      <div class="col-md-11">
+        <div class="card-body">
+          <form [formGroup]="myForm" (ngSubmit)="postData()">
+            <div class="mb-3">
+              <label for="name" class="form-label">Name </label>
+              <input type="text" class="form-control" id="name" formControlName="name" [(ngModel)]="proData.name"
+                placeholder="Enter product name">
+  
+                <div class="alert alert-danger" *ngIf="errorData['name'].invalid && errorData['name'].touched">
+                  <div *ngIf="errorData['name'].errors && errorData['name'].errors['required']">Name is required</div>
+                <div *ngIf="errorData['name'].errors && errorData['name'].errors['pattern']">Name Pattern is wrong</div>
+                </div>
+            </div>
+            <div class="mb-3">
+              <label for="price" class="form-label">Price </label>
+              <input type="text" class="form-control" formControlName="price" id="price" [(ngModel)]="proData.price"
+                placeholder="Enter product price">
+  
+                <div class="alert alert-danger" *ngIf="errorData['price'].invalid && errorData['price'].touched">
+                  <div *ngIf="errorData['price'].errors && errorData['price'].errors['required']">price is required</div>
+                <div *ngIf="errorData['price'].errors && errorData['price'].errors['pattern']">price Pattern is wrong</div>
+                </div>
+            </div>
+            <div class="mb-3">
+              <label for="desc" class="form-label">Description </label>
+              <input type="text" class="form-control" formControlName="description" id="desc" [(ngModel)]="proData.description"
+                placeholder="Enter product description">
+  
+                <div class="alert alert-danger" *ngIf="errorData['description'].invalid && errorData['description'].touched">
+                  <div *ngIf="errorData['description'].errors && errorData['description'].errors['required']">description is required</div>
+                <div *ngIf="errorData['description'].errors && errorData['description'].errors['pattern']">description Pattern is wrong</div>
+                </div>
+            </div>
+            <div class="mb-3">
+              <label for="image" class="form-label">Image </label>
+              <input type="text" class="form-control" formControlName="image" id="image" [(ngModel)]="proData.image"
+                placeholder="Enter image link">
+  
+                <div class="alert alert-danger" *ngIf="errorData['image'].invalid && errorData['image'].touched">
+                  <div *ngIf="errorData['image'].errors && errorData['image'].errors['required']">image is required</div>
+                <div *ngIf="errorData['image'].errors && errorData['image'].errors['imageErr']">image Pattern is wrong</div>
+                </div>
+            </div>
+            <button type="submit" value="update" class="btn btn-success"  [disabled]="myForm.invalid">Update</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

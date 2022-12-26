@@ -1,0 +1,17 @@
+.card{
+    background-color: black;
+    color: #eee;
+}
+h1{
+    text-align: center;
+}
+.search{
+    margin: 20px 0px 0px 1000px;
+}
+.search p{
+    font-size: 20px;
+}
+.search input{
+    width: 250px;
+    border-radius: 5px;
+}
